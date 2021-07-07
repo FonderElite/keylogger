@@ -31,7 +31,8 @@ switch(key){
 	cout << "\b";
 	WriteToFile("\b");
 	break;
-
+default:
+cout << "Later use.";
 }
 }
 }
