@@ -4,13 +4,13 @@
 <br>
 <img src="https://home.sophos.com/en-us/medialibrary/Microsites/Home/SecurityCenter/what-is-a-keylogger.jpg" width="500px">
 
-# It's not illegal
+## It's not illegal
 In terms of legality, a tool isn't illegal unless used unethically. The tool can be used to track someone's keystrokes when using your pc. It's very much safe to assume that a user will turn this on just to make sure that the one using your pc isn't doing anything **SUS**.
 
-# C++
+## C++
 C++ is a general-purpose progrmming language created by Bjarne Stroustrup as an extension of the C programming language, or "C with Classes".
 The language is a superset of the programming language C, although this language is really not that type safe just like it's older sibling, it still is a good 
 programming langauge to use when making exploits, malwares etc.
 
-# More Info
+## More Info
 I reffered the code to a keylogger tutorial i found on youtube, although i forgot the youtube channel. 🤦
