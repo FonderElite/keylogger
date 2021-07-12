@@ -25,3 +25,4 @@ programming langauge to use when making exploits, malwares etc.
 
 ## More Info
 I reffered the code to a keylogger tutorial i found on youtube, although i forgot the youtube channel. 🤦
+With that said, enjoy using the tool for education and more knowledge.
