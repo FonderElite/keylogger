@@ -9,6 +9,10 @@
 #Using g++
 C:\>g++ -o keylogger.exe keylogger.cpp
 ```
+**Or use an IDE**
+### C++ IDE's:
+<li>https://www.eclipse.org/downloads/</li>
+
 ## It's not illegal
 In terms of legality, a tool isn't illegal unless used unethically. The tool can be used to track someone's keystrokes when using your pc. It's very much safe to assume that a user will turn this on just to make sure that the one using your pc isn't doing anything **SUS**.
 
