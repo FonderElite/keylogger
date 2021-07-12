@@ -9,6 +9,8 @@ In terms of legality, a tool isn't illegal unless used unethically. The tool can
 
 # C++
 C++ is a general-purpose progrmming language created by Bjarne Stroustrup as an extension of the C programming language, or "C with Classes".
+The language is a superset of the programming language C, although this language is really not that type safe just like it's older sibling, it still is a good 
+programming langauge to use when making exploits, malwares etc.
 
 # More Info
 I reffered the code to a keylogger tutorial i found on youtube, although i forgot the youtube channel. 🤦
