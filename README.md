@@ -4,6 +4,12 @@
 <br>
 <img src="https://home.sophos.com/en-us/medialibrary/Microsites/Home/SecurityCenter/what-is-a-keylogger.jpg" width="500px">
 
+## General Usage:
+```bash
+#Using g++
+C:\>g++ -o keylogger keylogger.cpp
+#Or use an IDE
+```
 ## It's not illegal
 In terms of legality, a tool isn't illegal unless used unethically. The tool can be used to track someone's keystrokes when using your pc. It's very much safe to assume that a user will turn this on just to make sure that the one using your pc isn't doing anything **SUS**.
 
